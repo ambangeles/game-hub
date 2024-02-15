@@ -1,8 +1,8 @@
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
-import { GameCard } from "./GameCard";
+import GameCard from "./GameCard";
 
-export const GameGrid = () => {
+const GameGrid = () => {
     const { games, error } = useGames();
     return (
         <>
@@ -24,3 +24,5 @@ export const GameGrid = () => {
         </>
     );
 };
+
+export default GameGrid;
