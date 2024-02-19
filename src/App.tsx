@@ -13,7 +13,7 @@ import GameHeading from "./components/GameHeading";
 export interface GameQuery {
     genre?: Genre | null;
     platform?: Platform | null;
-    sortOrder?: string;
+    sortOrder: string;
     searchText?: string;
 }
 
@@ -50,7 +50,7 @@ function App() {
                         onSelectGenre={(genre) =>
                             setGameQuery({ ...gameQuery, genre })
                         }
-                        selectedGenre={gameQuery?.genre}
+                        selectedGenre={gameQuery?.genre || null}
                     />
                 </GridItem>
             </Show>
@@ -63,7 +63,7 @@ function App() {
                                 onSelectPlatform={(platform) =>
                                     setGameQuery({ ...gameQuery, platform })
                                 }
-                                selectedPlatform={gameQuery?.platform}
+                                selectedPlatform={gameQuery?.platform || null}
                             />
                         </Box>
                         <SortSelector

@@ -23,7 +23,12 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
                 {error && <MenuItem>{error}</MenuItem>}
                 {!isLoading &&
                     data.map((platform) => (
-                        <MenuItem onClick={() => onSelectPlatform(platform)} key={platform.id}>{platform.name}</MenuItem>
+                        <MenuItem
+                            onClick={() => onSelectPlatform(platform)}
+                            key={platform.id}
+                        >
+                            {platform.name}
+                        </MenuItem>
                     ))}
             </MenuList>
         </Menu>
